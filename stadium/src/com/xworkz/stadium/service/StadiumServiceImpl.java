@@ -40,15 +40,16 @@ public class StadiumServiceImpl implements StadiumService {
 		}
 		if (entryFees > 0) {
 			System.out.println("fees is valid");
+			this.repo.save(entity);
 		} else {
 			System.err.println("fees is invalid");
 		}
-		if (type != null && type == type.OUTDOOR && type == type.INDOOR) {
-			System.out.println("type is valid");
-			this.repo.save(entity);
-		} else {
-			System.err.println("type is invalid");
-		}
+//		if (type != null && type == type.OUTDOOR && type == type.INDOOR) {
+//			System.out.println("type is valid");
+//			this.repo.save(entity);
+//		} else {
+//			System.err.println("type is invalid");
+//		}
 		return false;
 	}
 

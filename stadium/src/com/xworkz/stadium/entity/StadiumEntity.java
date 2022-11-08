@@ -1,6 +1,8 @@
 package com.xworkz.stadium.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -23,6 +25,7 @@ public class StadiumEntity {
 	private int foundedYear;
 	private int capacity;
 	private int entryFees;
+	@Enumerated(EnumType.STRING)
 	private StadiumType type;
 
 }

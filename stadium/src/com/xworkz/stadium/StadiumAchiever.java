@@ -9,10 +9,12 @@ public class StadiumAchiever {
 
 	public static void main(String[] args) {
 
-		StadiumEntity entity1 = new StadiumEntity(1, "Chinnaswamy", 1980, 25000, 1000, StadiumType.OUTDOOR);
+		StadiumEntity entity1 = new StadiumEntity(2, "Chinnaswamy", 1985, 25000, 1000, StadiumType.OUTDOOR);
+		StadiumEntity entity2 = new StadiumEntity(3, "Chinnaswamy", 1985, 25000, 1000, StadiumType.OUTDOOR);
+
 
 		StadiumService service = new StadiumServiceImpl();
-		service.validateAndSave(entity1);
+		service.validateAndSave(entity2);
 
 	}
 
