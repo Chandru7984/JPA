@@ -22,8 +22,8 @@ public class OnlinePaymentAchiever {
 		OnlinePaymentService service = new OnlinePaymentServiceImpl();
 		service.validateAndSave(entity1);
 		service.validateAndSave(entity2);
-		service.validateAndSave(entity3);
-		service.validateAndSave(entity4);
+		service.validateAndSave(entity5);
+		service.validateAndSave(entity6);
 		
 		Optional<OnlinePaymentEntity> validateAndFindById = service.validateAndFindById(2);
 		if(validateAndFindById.isPresent()) {
