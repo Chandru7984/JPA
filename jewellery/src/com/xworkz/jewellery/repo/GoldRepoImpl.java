@@ -216,4 +216,24 @@ public class GoldRepoImpl implements GoldRepo {
 		}
 		return Optional.empty();
 	}
+	
+	@Override
+	public Optional<Collection<GoldEntity>> findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan(
+			double charges, double makingCharges) {
+		manager = factory.createEntityManager();
+		try {
+			Query query = manager.createNamedQuery("findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan");
+			
+			query.setParameter("ml", charges);
+			query.setParameter("km", makingCharges);
+			List resultList = query.getResultList();
+			if(resultList!=null) {
+				System.out.println("data is valid");
+				return Optional.of(resultList);
+			}
+		}finally {
+			manager.close();
+		}
+		return Optional.empty();
+	}
 }

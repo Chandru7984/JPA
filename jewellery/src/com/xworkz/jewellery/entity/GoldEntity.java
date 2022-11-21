@@ -33,8 +33,7 @@ import lombok.NoArgsConstructor;
 @NamedQuery(name = "getAllShopName", query = "Select nanu.shopName from GoldEntity nanu")
 @NamedQuery(name = "getAllShopNameAndType", query = "Select nanu.shopName,nanu.type from GoldEntity nanu")
 @NamedQuery(name = "findAllByMakingChargesGreaterThan", query = "Select nanu.makingCharges from GoldEntity nanu where nanu.makingCharges>:mk")
-
-
+@NamedQuery(name = "findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan", query = "Select nanu from GoldEntity nanu where nanu.wastageCharges>:ml and nanu.makingCharges>:km")
 
 public class GoldEntity {
 

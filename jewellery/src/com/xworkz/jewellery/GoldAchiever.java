@@ -80,16 +80,27 @@ public class GoldAchiever {
 
 		Collection<Object[]> allShopNameAndType = service.getAllShopNameAndType();
 		for (Object[] objects : allShopNameAndType) {
-			for (int i = 0; i <= objects.length-1; i++) {
+			for (int i = 0; i <= objects.length - 1; i++) {
 				System.out.println(objects[i]);
 			}
 		}
-		
+
 		Optional<Collection<GoldEntity>> makingChargesGreaterThan = service.findAllByMakingChargesGreaterThan(1000.0);
-		if(makingChargesGreaterThan.isPresent()) {
+		if (makingChargesGreaterThan.isPresent()) {
 			Collection<GoldEntity> collection = makingChargesGreaterThan.get();
 			System.out.println(collection);
-		}else {
+		} else {
+			System.out.println("data is null");
+		}
+		System.out.println("===============calling new method===============");
+
+		Optional<Collection<GoldEntity>> findAllByWasteAndMaking = service
+				.findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan(400.0, 1000.0);
+		if (findAllByWasteAndMaking.isPresent()) {
+			Collection<GoldEntity> collection = findAllByWasteAndMaking.get();
+			System.out.println(collection);
+
+		} else {
 			System.out.println("data is null");
 		}
 

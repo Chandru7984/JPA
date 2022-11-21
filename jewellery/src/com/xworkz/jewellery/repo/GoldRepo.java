@@ -30,4 +30,6 @@ public interface GoldRepo {
 	
 	Optional<Collection<GoldEntity>> findAllByMakingChargesGreaterThan(double charges);
 	
+	Optional<Collection<GoldEntity>> findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan(double charges,double makingCharges);
+	
 }

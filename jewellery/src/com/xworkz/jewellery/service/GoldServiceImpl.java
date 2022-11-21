@@ -81,4 +81,10 @@ public class GoldServiceImpl implements GoldService {
 	public Optional<Collection<GoldEntity>> findAllByMakingChargesGreaterThan(double charges) {
 		return repo.findAllByMakingChargesGreaterThan(charges);
 	}
+	
+	@Override
+	public Optional<Collection<GoldEntity>> findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan(
+			double charges, double makingCharges) {
+		return repo.findAllByWastageChargesGreaterThanAndMakingChargesGreaterThan(charges, makingCharges);
+	}
 }
