@@ -29,6 +29,13 @@ import lombok.NoArgsConstructor;
 @NamedQuery(name = "findMakingChargesByShopName", query = "select distinct nanu.makingCharges from GoldEntity nanu where nanu.shopName=:sc")
 @NamedQuery(name = "findWastageChargesAndMakingChargesByShopName", query = "select nanu.wastageCharges,nanu.makingCharges from GoldEntity nanu where nanu.shopName=:dp")
 @NamedQuery(name = "findTotalPriceByGramAndShopName", query = "select sum(goldPrice+gstPrice+makingCharges+wastageCharges)from GoldEntity nanu where nanu.grams=:ss and nanu.shopName=:cs")
+@NamedQuery(name = "getAll", query = "Select nanu from GoldEntity nanu")
+@NamedQuery(name = "getAllShopName", query = "Select nanu.shopName from GoldEntity nanu")
+@NamedQuery(name = "getAllShopNameAndType", query = "Select nanu.shopName,nanu.type from GoldEntity nanu")
+@NamedQuery(name = "findAllByMakingChargesGreaterThan", query = "Select nanu.makingCharges from GoldEntity nanu where nanu.makingCharges>:mk")
+
+
+
 public class GoldEntity {
 
 	@Id
