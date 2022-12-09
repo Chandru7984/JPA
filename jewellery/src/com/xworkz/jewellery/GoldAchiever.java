@@ -25,7 +25,7 @@ public class GoldAchiever {
 		list.add(entity);
 		list.add(entity1);
 
-//		service.validateAndSave(list);
+		service.validateAndSave(list);
 
 		Optional<GoldEntity> findByShopNameAndId = service.findByShopNameAndId("BHIMA", 2);
 		if (findByShopNameAndId.isPresent()) {
